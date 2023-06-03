@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Eczar&family=Noto+Serif&family=Roboto+Slab:wght@500&display=swap");
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  background-color: #f1d4e5;
+}
+.App {
+  padding-left: 10px;
+  font-family: "Eczar", serif;
+  text-align: center;
+  background-color: #f1d4e5;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.ListContainer {
+  margin: 5% 0;
+}
+.ListContainer > .searchInput_Container {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -53px;
+}
+.ListContainer > .searchInput_Container input {
+  width: 50%;
+  margin-top: 52px;
+  margin-bottom: 52px;
+  padding: 10px;
+  outline: none;
+}
+.ListContainer .List_container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.BookCard {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #73bbc9;
+  background-color: white;
+}
+
+.BookCard img {
+  width: 64%;
+  height: 207px;
+  margin-top: 36px;
+}
+
+.BookCard button {
+  width: 70%;
+  height: 35px;
+  border: 3px solid black;
+  border-radius: 6%;
+  font-family: "Eczar", serif;
+  font-weight: bold;
+  background-color: #73bbc9;
+}
+.BookCard button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #73bbc9;
+}
+.BookName {
+  margin: 6px;
+  font-style: normal;
+  font-family: sans-serif;
+}
+
+.BookAuth {
+  margin: 7px;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.header {
+  flex: 0 0 auto;
+  width: 88%;
+  height: 350px;
+  margin-top: 90px;
+  margin-left: 90px;
+  margin-right: 90px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #73bbc9;
+  background-color: white;
+}
+
+.header h1 {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.header p {
+  font-family: "Eczar", serif;
+  font-weight: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: justify;
+  text-align: justify;
+  margin: 42px;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.Pagination button {
+  padding: 8px 30px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 30px;
+}
+
+.Pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.DescriptionScreen {
+  width: 31%;
+  height: 430px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #73bbc9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.DescriptionScreen p {
+  font-family: "Eczar", serif;
+  font-size: 16px;
+  margin: 30px;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.DescriptionScreen .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #73bbc9;
+  border: none;
+  border-radius: 50%;
+  color: black;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.DescriptionScreen .closeButton:hover {
+  background-color: black;
+  color: #73bbc9;
+}
+
+/*responsiveness*/
+
+@media (max-width: 1485px) {
+  .header {
+    width: 78%;
+    height: auto;
+  }
+  .header h1 {
+    text-align: center;
+  }
+  .ListContainer {
+    width: 126%;
+  }
+  .ListContainer .List_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .DescriptionScreen {
+    width: 64%;
+    height: auto;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .header {
+    width: 70%;
+    height: 30%;
+    margin-top: 45px;
+    margin-left: 49px;
+    margin-right: 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #daedfc;
+    background-color: white;
+  }
+
+  .header h1 {
+    font-family: "Noto Serif", serif;
+    font-style: italic;
+    font-size: x-large;
+    text-align: center;
+    /* padding-top: 30px; */
+  }
+  .header p {
+    margin: 19px;
+  }
+  .ListContainer > .searchInput_Container input {
+    width: 70%;
+    margin-top: 52px;
+    margin-bottom: 52px;
+    padding: 10px 10px;
+    outline: none;
+  }
+  .ListContainer {
+    width: 96%;
+    margin: 3% 0px;
+    /* padding: 32px; */
+  }
+  .ListContainer .List_container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .DescriptionScreen p {
+    font-family: "Eczar", serif;
+    font-size: 16px;
+    margin: 11px;
+    margin-bottom: 0;
+    text-align: justify;
+  }
+  .DescriptionScreen {
+    width: 81%;
+    height: auto;
+  }
+}
